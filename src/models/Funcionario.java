@@ -8,20 +8,15 @@ public class Funcionario {
 
     private String nome; 
     private Integer id;
-    private Integer idade;
-    private String genero;
-    private String funcao;
     private String filial;
-    private String turno;
     
-    public Funcionario(String nome, Integer id, Integer idade, String genero, String funcao, String filial, String turno){
+    
+    public Funcionario(String nome, Integer id, String filial){
 
         this.nome = nome;
-        this.idade = idade;
-        this.genero = genero;
-        this.funcao = funcao;
+        this.id = id;
         this.filial = filial;
-        this.turno = turno;
+    
 
     }
 
@@ -41,30 +36,7 @@ public class Funcionario {
         this.id = id;
     }
 
-    public Integer getIdade(){
-        return idade;
-    }
-
-    public void setIdade(Integer idade){
-        this.idade = idade;
-    }
-
-    public String getGenero(){
-        return genero;
-    }
-
-    public void setGenero(String genero){
-        this.genero = genero;
-    }
-
-    public String getFuncao(){
-        return funcao;
-    }
-
-    public void setFuncao(String funcao){
-        this.funcao = funcao;
-    }
-
+    
     public String getFilial(){
         return filial;
     }
@@ -73,13 +45,6 @@ public class Funcionario {
         this.filial = filial;
     }
 
-    public String getTurno(){
-        return turno;
-    }
-
-    public void setTurno(String turno){
-        this.turno = turno;
-    }
 
 
 }

@@ -1,25 +1,36 @@
 package controllers;
 import models.Funcionario;
+import java.util.ArrayList;
 
 public class FuncionarioController {
-    
-    public static Funcionario addFuncionario (String nome,int id, int idade ,String genero, String funcao, String filial, String turno){
-        Funcionario f1 = new Funcionario;
 
+    public ArrayList<Funcionario> funcionarios;
+
+    public FuncionarioController(ArrayList<Funcionario> funcionarios){
+        this.funcionarios = funcionarios;
+    }
+    
+    public Funcionario addFuncionario (String nome,int id, String filial){
+        Funcionario f1 = new Funcionario( nome, id,  filial);
+        funcionarios.add(f1);
         return f1;
     }
 
-    public static void removeFuncionario (Integer indice, ArrayList<Funcionario> funcionarios){
-        funcionarios.remove(indice);
+    public void removeFuncionario (Integer indice){
+        Funcionario funcionario = funcionarios.get(indice);
+        funcionarios.remove(funcionario);
     }
 
-    public static Funcionario modFuncionario (String nome,int id, int idade ,String genero, String funcao, String filial, String turno){
-        return addFuncionario(nome, id, idade, genero, funcao, filial, turno);
+    public Funcionario modFuncionario (String nome,int id,  String filial){
+        return addFuncionario(nome, id, filial);
     }
 
-    public static void listFuncionario (ArrayList<Funcionario> funcionarios){
-        for(Funcionario funcionarios : funcionario){
-            System.out.println("Nome" + funcionario.nome + "ID:" + funcionario.id + "Idade: "+ funcionario.idade + "Genêro:" + funcionario.genero + "Função" + funcionario.funcao + "Flilial: " + funcionario.filial + "Turno :" + funcionario.turno);
+    public void listFuncionario (){
+        for (int counter = 0; counter < funcionarios.size(); counter++) {
+            Funcionario funcionario = funcionarios.get(counter);
+            System.out.println("Indice: "+ counter + " Nome: " + funcionario.getNome() + " ID: " + funcionario.getId()  + " Filial: " + funcionario.getFilial());
         }
     }
+
+    
 }
