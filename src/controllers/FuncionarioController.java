@@ -2,6 +2,7 @@ package controllers;
 import models.Funcionario;
 import java.util.ArrayList;
 
+
 public class FuncionarioController {
 
     public ArrayList<Funcionario> funcionarios;
@@ -21,15 +22,38 @@ public class FuncionarioController {
         funcionarios.remove(funcionario);
     }
 
-    public Funcionario modFuncionario (String nome,int id,  String filial){
-        return addFuncionario(nome, id, filial);
-    }
+    
 
     public void listFuncionario (){
         for (int counter = 0; counter < funcionarios.size(); counter++) {
             Funcionario funcionario = funcionarios.get(counter);
             System.out.println("Indice: "+ counter + " Nome: " + funcionario.getNome() + " ID: " + funcionario.getId()  + " Filial: " + funcionario.getFilial());
         }
+    }
+
+    public Boolean verificaFuncionario(Integer indice){
+        try {
+            funcionarios.get(indice);
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }   
+    }
+
+    public Funcionario encontraFuncionario(Integer indice){
+       return funcionarios.get(indice);
+    }
+
+    public void editarNome(Funcionario funcionario, String nome ){
+        funcionario.setNome(nome);
+    }
+
+    public void editarId(Funcionario funcionario, Integer id ){
+        funcionario.setId(id);
+    }
+
+    public void editarFilial(Funcionario funcionario, String filial ){
+        funcionario.setFilial(filial);
     }
 
     
