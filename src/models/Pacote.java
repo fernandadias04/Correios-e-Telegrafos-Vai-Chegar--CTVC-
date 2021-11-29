@@ -1,15 +1,15 @@
 package models;
 
 public class Pacote {
-    private String remetente;
+    private String destinatario;
     private String emissor;
     private Integer id;
-    private String rota;
+    private Integer rota;
     private String localizacao;
     private String estadoEntregue;
 
-    public Pacote(String remetente, String emissor, Integer id, String rota, String localizacao, String estadoEntregue) {
-        this.remetente = remetente;
+    public Pacote(String destinatario, String emissor, Integer id, Integer rota, String localizacao, String estadoEntregue) {
+        this.destinatario = destinatario;
         this.emissor = emissor;
         this.id = id;
         this.rota = rota;
@@ -17,12 +17,12 @@ public class Pacote {
         this.estadoEntregue = estadoEntregue;
     }
 
-    public String getRemetente(){
-        return remetente;
+    public String getDestinatario(){
+        return destinatario;
     }
 
-    public void setRemetente(String remetente){
-        this.remetente = remetente;
+    public void setDestinatario(String destinatario){
+        this.destinatario = destinatario;
     }
 
     public String getEmissor(){
@@ -42,11 +42,11 @@ public class Pacote {
     }
 
 
-    public String getRota(){
+    public Integer getRota(){
         return rota;
     }
 
-    public void setRota( String rota){
+    public void setRota( Integer rota){
         this.rota = rota;
     }
 
