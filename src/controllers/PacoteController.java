@@ -24,7 +24,7 @@ public class PacoteController {
     public void list(){
         for(int counter = 0; counter < pacotes.size(); counter ++ ){
             Pacote pacote = pacotes.get(counter);
-            System.out.println("Destinatário: " + pacote.getDestinatario() + "ID: " + pacote.getId() + "Emisssor: " + pacote.getEmissor() + "Rota: " + pacote.getRota() + "Estado Entregue: " + pacote.getEstadoEntregue() + "Localização: " + pacote.getLocalizacao() );
+            System.out.println("Destinatário: " + pacote.getDestinatario() + "ID: " + pacote.getId() + "Emisssor: " + pacote.getEmissor() + "Rota: " + pacote.getRota() + "Estado Entregue: " + pacote.getEstadoEntregue() + "Localização:  " + pacote.getLocalizacao() );
         }
     }
 
