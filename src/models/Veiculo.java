@@ -4,13 +4,13 @@ public class Veiculo {
     protected String modelo;
     protected Integer ano;
     protected Integer id;
-    protected String condicoes;
+    protected Integer rotaAssociada;
 
-    public Veiculo(String modelo, Integer ano, Integer id, String condicoes) {
+    public Veiculo(String modelo, Integer ano, Integer id, Integer rotaAssociada) {
         this.modelo = modelo;
         this.ano = ano;
-        this.condicoes = condicoes;
         this.id = id;
+        this.rotaAssociada = rotaAssociada;
     }
 
     public String getModelo(){
@@ -29,13 +29,6 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public String getCondicoes(){
-        return condicoes;
-    }
-
-    public void setCondicoes(String condicoes){
-        this.condicoes = condicoes;
-    }
 
     public Integer getId(){
         return id;
@@ -43,6 +36,14 @@ public class Veiculo {
 
     public void setId(Integer id){
         this.id = id;
+    }
+
+    public Integer getRotaAssociada(){
+        return rotaAssociada;
+    }
+
+    public void setRotaAssociada(Integer rotaAssociada){
+        this.rotaAssociada = rotaAssociada;
     }
 
 }
