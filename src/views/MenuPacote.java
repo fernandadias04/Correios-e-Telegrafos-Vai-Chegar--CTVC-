@@ -13,7 +13,7 @@ public class MenuPacote {
         this.controller = controller;
     }
 
-    public void menu(){
+    public void menuPacote(){
 
         sc = new Scanner(System.in);
 		Integer opcao;

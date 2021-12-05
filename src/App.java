@@ -12,16 +12,16 @@ public class App {
         // FuncionarioController funcionarioController = new FuncionarioController(funcionarios);
         // MenuFuncionario menuFuncionario = new MenuFuncionario(funcionarioController);
 
-        ArrayList<Pacote> pacotes = new ArrayList<>();
-        PacoteController pacoteController = new PacoteController(pacotes) ;
-        MenuPacote menuPacote = new MenuPacote(pacoteController);
+        // ArrayList<Pacote> pacotes = new ArrayList<>();
+        // PacoteController pacoteController = new PacoteController(pacotes) ;
+        // MenuPacote menuPacote = new MenuPacote(pacoteController);
 
-        menuPacote.menu();
+        // menuPacote.menu();
 
 
         // menuFuncionario.menu();
 
 
-        System.out.println("");
+        // System.out.println("");
     }
 }
