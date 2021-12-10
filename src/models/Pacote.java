@@ -7,14 +7,16 @@ public class Pacote {
     private Integer rota;
     private String localizacao;
     private String estadoEntregue;
+    private String pacoteColetado;
 
-    public Pacote(String destinatario, String emissor, Integer id, Integer rota, String localizacao, String estadoEntregue) {
+    public Pacote(String destinatario, String emissor, Integer id, Integer rota, String localizacao, String estadoEntregue, String pacoteColetado) {
         this.destinatario = destinatario;
         this.emissor = emissor;
         this.id = id;
         this.rota = rota;
         this.localizacao = localizacao;
         this.estadoEntregue = estadoEntregue;
+        this.pacoteColetado = pacoteColetado;
     }
 
     public String getDestinatario(){
@@ -66,8 +68,13 @@ public class Pacote {
         this.estadoEntregue = estadoEntregue;
     }
 
+    public void setPacoteColetado(String pacoteColetado){
+        this.pacoteColetado = pacoteColetado;
+    }
 
-
+    public String getPacoteColetado(){
+        return pacoteColetado;
+    }
 
 
 }

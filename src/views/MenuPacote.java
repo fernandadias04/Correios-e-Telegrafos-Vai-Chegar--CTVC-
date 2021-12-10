@@ -75,8 +75,10 @@ public class MenuPacote {
         String localizacao = sc.nextLine();
         System.out.println("Já está entregue?");
         String  estadoEntregue = sc.nextLine();
+        System.out.println("Já foi Coletado?");
+        String  pacoteColetado = sc.nextLine();
 
-        controller.add(destinatario, emissor, id, rota, localizacao, estadoEntregue);
+        controller.add(destinatario, emissor, id, rota, localizacao, estadoEntregue, pacoteColetado);
     }
 
     public void listar(){
@@ -101,17 +103,17 @@ public class MenuPacote {
         Integer indice;
         
 
-        System.out.print("Qual o indice do Funcionario a ser editado?");
+        System.out.print("Qual o indice do Pacote a ser editado?");
         indice = sc.nextInt();
         sc.nextLine();
 
         if(!controller.verifica(indice)){
-            System.out.println("Funcionario não encontrado, inserir funcionario válido");
+            System.out.println("Pacote não encontrado, inserir Pacote válido");
             
             return;
         }
 
-        System.out.println("Funcionario encontrado!");
+        System.out.println("Pacote encontrado!");
 
         Pacote pacote = controller.encontraPacote(indice);
         do{
@@ -121,6 +123,7 @@ public class MenuPacote {
             System.out.println("4-Editar Rota de Entrega: " + pacote.getRota());
             System.out.println("5-Editar Localização Atual: " + pacote.getLocalizacao());
             System.out.println("6-Editar status de entrega: " + pacote.getEstadoEntregue());
+            System.out.println("7-Editar se já foi Coletado: " + pacote.getPacoteColetado());
 
 
         opcao = sc.nextInt();
@@ -163,6 +166,12 @@ public class MenuPacote {
                 System.out.println("Digite o status de Entrega: ");
                 String estadoEntregue = sc.nextLine();
                 controller.editarEstadoEntregue(pacote, estadoEntregue);
+                break;
+            
+            case 7:
+                System.out.println("Digite o status da coleta: ");
+                String pacoteColetado = sc.nextLine();
+                controller.editarPacoteColetado(pacote, pacoteColetado);
                 break;
             
         }

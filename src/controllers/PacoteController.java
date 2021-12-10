@@ -10,8 +10,8 @@ public class PacoteController {
         this.pacotes = pacotes;
     }
 
-    public Pacote add(String destinatario, String emissor, Integer id, Integer rota, String localizacao, String estadoEntregue){
-        Pacote p1 = new Pacote( destinatario,  emissor,  id,  rota,  localizacao,  estadoEntregue);
+    public Pacote add(String destinatario, String emissor, Integer id, Integer rota, String localizacao, String estadoEntregue, String pacoteColetado){
+        Pacote p1 = new Pacote( destinatario,  emissor,  id,  rota,  localizacao,  estadoEntregue, pacoteColetado);
         pacotes.add(p1);
         return p1;
     }
@@ -63,6 +63,10 @@ public class PacoteController {
 
     public void editarEstadoEntregue(Pacote pacote, String estadoEntregue){
         pacote.setEstadoEntregue(estadoEntregue);
+    }
+
+    public void editarPacoteColetado(Pacote pacote, String pacoteColetado){
+        pacote.setPacoteColetado(pacoteColetado);
     }
 
 
