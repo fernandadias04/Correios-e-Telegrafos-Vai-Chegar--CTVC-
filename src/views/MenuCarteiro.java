@@ -62,8 +62,14 @@ public class MenuCarteiro {
 
         System.out.println("Pacote encontrado!");
         Pacote pacote = controller.encontraPacote(indice);
+
         String pacoteColetado = "SIM";
         controller.editarPacoteColetado(pacote, pacoteColetado);
+
+   
+        String estadoEntregue = "EM ROTA DE ENTREGA";
+        controller.editarEstadoEntregue(pacote, estadoEntregue);
+
         System.out.println("Pacote Coletado!");
     }
 
@@ -84,8 +90,9 @@ public class MenuCarteiro {
         System.out.println("Pacote encontrado!");
 
         Pacote pacote = controller.encontraPacote(indice);
-        String estadoEntregue = "SIM";
+        String estadoEntregue = "ENTREGUE AO DESTINATARIO";
         controller.editarEstadoEntregue(pacote, estadoEntregue);
+
         System.out.println("Pacote Entregue!");
     }
 
@@ -97,6 +104,8 @@ public class MenuCarteiro {
         sc.nextLine();
         controller.encontraPacote(indice);
 
+        
+
         if(!controller.verifica(indice)){
             System.out.println("Pacote não encontrado, inserir Pacote válido");
             
@@ -107,7 +116,7 @@ public class MenuCarteiro {
 
         Pacote pacote = controller.encontraPacote(indice);
 
-        String estadoEntregue = "NAO";
+        String estadoEntregue = "DEVOLVIDO A FILIAL";
         controller.editarEstadoEntregue(pacote, estadoEntregue);
 
         String pacoteColetado = "NAO";
