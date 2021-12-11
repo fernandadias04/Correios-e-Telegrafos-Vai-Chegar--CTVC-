@@ -5,7 +5,9 @@ import java.util.Scanner;
 import controllers.RotaController;
 import models.Rota;
 
+
 public class MenuRota {
+
     private RotaController controller;
     private Scanner sc;
 
@@ -47,6 +49,8 @@ public class MenuRota {
                 case 4:                     
                     excluir();
                     break;
+
+                    
                     
                 
             }
@@ -68,9 +72,15 @@ public class MenuRota {
     }
 
     public void excluir(){
-        System.out.println("Qual o indice do veiculo a ser excluido?");
+        System.out.println("Qual o indice da rota a ser excluido?");
         Integer indice = sc.nextInt();
         sc.nextLine();
+
+        if(!controller.verifica(indice)){
+            System.out.println("Rota não encontrada, inserir Rota válida");
+            
+            return;
+        }
 
         controller.remove(indice);;
     }
@@ -84,7 +94,7 @@ public class MenuRota {
         Integer opcao;
         Integer indice;
 
-        System.out.print("Qual o indice do Veículo a ser editado?");
+        System.out.print("Qual o indice da rota a ser editado?");
         indice = sc.nextInt();
         sc.nextLine();
 
