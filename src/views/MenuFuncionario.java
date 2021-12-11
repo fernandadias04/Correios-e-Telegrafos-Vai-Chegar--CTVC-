@@ -11,14 +11,14 @@ public class MenuFuncionario {
     private Scanner sc;
 
 
-    public MenuFuncionario (FuncionarioController controller){
+    public MenuFuncionario (FuncionarioController controller, Scanner sc){
         this.controller = controller;
+        this.sc = sc;
     }
 
     public void menu(){
 
-        sc = new Scanner(System.in);
-		Integer opcao;
+        Integer opcao;
 
         do{
             System.out.println("");
@@ -52,8 +52,6 @@ public class MenuFuncionario {
 
 
         }while(opcao != 0);
-
-        sc.close();
     }
 
     public void adicionar(){
@@ -77,6 +75,13 @@ public class MenuFuncionario {
         System.out.println("Qual o indice do funcionario a ser excluido?");
         Integer indice = sc.nextInt();
         sc.nextLine();
+
+        if(!controller.verificaFuncionario(indice)){
+            System.out.println("Funcionario não encontrado, inserir funcionario válido");
+            
+            return;
+        }
+
         controller.removeFuncionario(indice);
 
         

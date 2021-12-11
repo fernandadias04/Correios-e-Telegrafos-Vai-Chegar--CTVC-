@@ -9,13 +9,13 @@ public class MenuPacote {
     private PacoteController controller;
     private Scanner sc;
 
-    public MenuPacote (PacoteController  controller){
+    public MenuPacote (PacoteController  controller, Scanner sc){
         this.controller = controller;
+        this.sc = sc;
     }
 
     public void menuPacote(){
 
-        sc = new Scanner(System.in);
 		Integer opcao;
 
         do{
@@ -52,12 +52,12 @@ public class MenuPacote {
                 case 5:
                     listar();
                     break;
+               
             }
 
 
         }while(opcao!=0);
 
-        sc.close();
     }
 
     public void adicionar(){
@@ -91,6 +91,13 @@ public class MenuPacote {
         System.out.println("Qual o indice do pacote a ser excluido?");
         Integer indice = sc.nextInt();
         sc.nextLine();
+
+        if(!controller.verifica(indice)){
+            System.out.println("Pacote não encontrado, inserir Pacote válido");
+            
+            return;
+        }
+        
         controller.remove(indice);
 
         

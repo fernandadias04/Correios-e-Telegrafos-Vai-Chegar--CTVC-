@@ -11,12 +11,12 @@ public class MenuRota {
     private RotaController controller;
     private Scanner sc;
 
-    public MenuRota(RotaController controller){
+    public MenuRota(RotaController controller, Scanner sc){
         this.controller = controller;
+        this.sc = sc;
     }
 
     public void menuRota(){
-        sc = new Scanner(System.in);
 		Integer opcao;
 
         do{
@@ -49,16 +49,13 @@ public class MenuRota {
                 case 4:                     
                     excluir();
                     break;
-
-                    
-                    
+    
                 
             }
 
 
         }while(opcao!=0);
 
-        sc.close();
     }
 
     public void adicionar(){

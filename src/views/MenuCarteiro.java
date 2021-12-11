@@ -9,14 +9,14 @@ public class MenuCarteiro {
 
     private Scanner sc;
 
-    public MenuCarteiro (PacoteController  controller){
+    public MenuCarteiro (PacoteController  controller, Scanner sc){
         this.controller = controller;
+        this.sc = sc;
     }
 
     public void menucarteiro(){
         
         Integer op;
-        sc = new Scanner(System.in);
 
         do{
             System.out.println("");
@@ -43,7 +43,6 @@ public class MenuCarteiro {
 
         }while(op!=0);
 
-        sc.close();
     };
 
     public void coleta(){

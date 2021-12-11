@@ -9,8 +9,9 @@ public class MenuVeiculo {
     private VeiculoController controller;
     private Scanner sc;
 
-    public MenuVeiculo (VeiculoController controller){
+    public MenuVeiculo (VeiculoController controller, Scanner sc){
         this.controller = controller;
+        this.sc = sc;
     }
 
     public void menu(){
@@ -50,7 +51,6 @@ public class MenuVeiculo {
 
         }while(opcao != 0);
 
-        sc.close();
     }
 
     public void adicionar(){
@@ -73,6 +73,13 @@ public class MenuVeiculo {
         System.out.println("Qual o indice do veiculo a ser excluido?");
         Integer indice = sc.nextInt();
         sc.nextLine();
+
+        if(!controller.verifica(indice)){
+            System.out.println("Veículo não encontrado, inserir veículo válido");
+            
+            return;
+        }
+
 
         controller.removeVeiculo(indice);
     }
